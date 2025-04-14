@@ -1,0 +1,19 @@
+代码功能/代码适用于V1.1版本
+
+在屏幕上显示电池电压值
+值得注意，精度不高，只能大致测量电池电压，电池使用二极管做防倒灌，因此需要在代码中修改补偿变量的值
+可以通过对测量的值和万用表测量到万用表的差值就行比较后补偿
+您可以通过电压值是否为 0 判断电池是否接入  电压值是否大于4.4V来判断是否接入了USB充电
+
+
+
+
+Code Function/Code Applicable to V1.1 Version
+
+Display the battery voltage value on the screen
+It is worth noting that the accuracy is not high and can only roughly measure the battery voltage. 
+The battery uses diodes to prevent backflow, so it is necessary to modify the value of the compensation variable in the code
+Compensation can be made by comparing the difference between the measured value and the multimeter measured by the multimeter
+You can determine whether the battery is connected to USB charging by whether the voltage value is 0 or not, and whether the voltage value is greater than 4.4V
+
+

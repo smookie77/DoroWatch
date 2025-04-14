@@ -1,0 +1,14 @@
+代码功能/代码适用于V1.1版本
+
+在屏幕上显示DS18B20检测到的温度值
+
+
+
+
+
+
+Code Function/Code Applicable to V1.1 Version
+
+Display the temperature value detected by DS18B20 on the screen
+
+
