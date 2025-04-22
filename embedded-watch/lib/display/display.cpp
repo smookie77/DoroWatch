@@ -19,7 +19,7 @@ void display_setup(){
         disp = lv_tft_espi_create(TFT_HOR_RES, TFT_VER_RES, draw_buf, sizeof(draw_buf));
         lv_display_set_rotation(disp, TFT_ROTATION);
 
-        ui_init();
+        ui_Screen1_screen_init();
 }
 
 unsigned long lastTickMillis = 0;

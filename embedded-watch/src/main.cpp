@@ -109,6 +109,7 @@ void mqttCallback(char *topic, byte *payload, unsigned int length) {
 
 
 void setup() {
+    display_setup();
     Serial.begin(115200);
     setup_wifi();
     timeClient.begin();
@@ -121,11 +122,19 @@ void setup() {
 
     // Synchronize time with NTP
     timeClient.update();
-    display_setup();
     ledGreen_value = 1;
     ledRed_value = 1;
+
     
     userio_setup();
+
+    while(1){
+        notifier_value = 1;
+        userio_loop();
+        notifier_value = 0;
+        userio_loop();
+    }
+    ui_Screen2_screen_init();
 }
 
 
@@ -152,8 +161,10 @@ void loop() {
 	} else {
 		userio_loop();
 		// Run in between MQTT checks
-		lv_label_set_text(ui_Label2, timeClient.getFormattedTime().c_str());
+		lv_label_set_text(ui_Label1, timeClient.getFormattedTime().c_str());
+        
 		display_loop();
+        
 	}
 	// Ensure Wi-Fi is connected
 	if (WiFi.status() != WL_CONNECTED) {
